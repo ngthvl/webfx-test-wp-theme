@@ -26,7 +26,7 @@ class WebFxTestPosttypes
                 'public' => true,
                 'has_archive' => true,
                 'rewrite' => array('slug' => 'homepage_carousel'),
-                'supports' => array('title', 'editor', 'thumbnail'),
+                'supports' => array('title', 'editor', 'thumbnail', 'custom-fields'),
                 'show_in_rest' => true,
             )
         );
