@@ -342,7 +342,7 @@ class WebFxTestCustomizer
         $wp_customize->add_setting('webfx_test_services_section_2_description', array(
             'default' => '',
             'transport' => 'refresh',
-            'sanitize_callback' => 'sanitize_text_field',
+            'sanitize_callback' => 'wp_kses_post',
         ));
         $wp_customize->add_control(new WP_Customize_Code_Editor_Control($wp_customize, 'webfx_test_services_section_2_description', array(
             'label' => __('Description', 'webfx-test-theme-services-description'),
