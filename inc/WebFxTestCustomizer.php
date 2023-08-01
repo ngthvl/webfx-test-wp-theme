@@ -344,17 +344,16 @@ class WebFxTestCustomizer
             'transport' => 'refresh',
             'sanitize_callback' => 'sanitize_text_field',
         ));
-        $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'webfx_test_services_section_2_description', array(
+        $wp_customize->add_control(new WP_Customize_Code_Editor_Control($wp_customize, 'webfx_test_services_section_2_description', array(
             'label' => __('Description', 'webfx-test-theme-services-description'),
             'section' => 'webfx_services_section_2',
             'settings' => 'webfx_test_services_section_2_description',
-            'type' => 'textarea'
         )));
 
         $wp_customize->add_setting('webfx_test_services_section_2_button_text', array(
             'default' => '',
             'transport' => 'refresh',
-            'sanitize_callback' => 'sanitize_code_field',
+            'sanitize_callback' => 'wp_kses_post',
         ));
         $wp_customize->add_control(new WP_Customize_Control($wp_customize, 'webfx_test_services_section_2_button_text', array(
             'label' => __('Button Label', 'webfx-test-theme-services-button-text'),

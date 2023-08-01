@@ -124,7 +124,15 @@ class WebFxTestWalkerNavMenu extends Walker_Nav_Menu
         $atts['target'] = !empty($menu_item->target) ? $menu_item->target : '';
 
         $atts['data-toggle'] = 'dropdown';
-        $atts['class'] = 'nav-link dropdown-toggle';
+
+        if($depth==0)
+        {
+            $atts['class'] = 'nav-link dropdown-toggle';
+        }
+        else
+        {
+            $atts['class'] = 'nav-link';
+        }
 
         if ('_blank' === $menu_item->target && empty($menu_item->xfn)) {
             $atts['rel'] = 'noopener';
